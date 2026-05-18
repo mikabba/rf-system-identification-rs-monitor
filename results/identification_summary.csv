@@ -1,0 +1,5 @@
+model_family,configuration,dataset,notes
+ARX,"na=2 or 4, nb=2/4, nk=1",Sweep 65MHz and other splits,Linear parametric baseline
+ARMAX,"na=2 or 4, nb=2/4, nc=1, nk=1",Sweep 65MHz and other splits,Linear model with noise dynamics
+Box-Jenkins,"nb/nf=2 or 4, nc=1, nd=1, nk=1",Sweep 65MHz and other splits,Separate process and noise dynamics
+NLARX,"na=4, nb=[4 4], nk=[1 1]",Sweep 65MHz,Best-fit candidate reported in the live script

@@ -1,0 +1,10 @@
+item,value
+Instrument,Rohde & Schwarz Radio Communication Service Monitor
+Oscilloscope,Tektronix TDS 2012B
+Oscilloscope channels,"CH1 RF output, CH2 low-frequency input"
+Carrier frequency range,5 MHz to 95 MHz
+Carrier frequency step,10 MHz
+Input duration,5 s
+Samples per carrier configuration,approximately 10000
+Dataset columns,"RF output y(t), low-frequency input u1(t), carrier u2(t)"
+Input classes,"sweep, sine 800 Hz, sine 6660 Hz, sine 13000 Hz, sine 20 kHz, null signal, white noise, Handel audio"

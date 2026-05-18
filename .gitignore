@@ -54,3 +54,26 @@ codegen/
 .DS_Store
 Thumbs.db
 ~$*
+
+# MATLAB temporary files
+*.asv
+*.m~
+*.autosave
+*.mex*
+slprj/
+codegen/
+
+# Raw measurement datasets / exports
+*.mat
+*.csv
+*.xlsx
+*.txt
+*.tdms
+*.bin
+*.dat
+*.fig
+
+# OS / Office temporary files
+.DS_Store
+Thumbs.db
+~$*

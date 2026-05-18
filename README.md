@@ -1,31 +1,36 @@
-﻿# RF System Identification with Neural Networks
+﻿# RF System Identification with MATLAB
 
-MATLAB project for RF system identification and signal-response modeling using artificial neural networks.
+MATLAB project for RF system identification and signal-response analysis across multiple signal classes and carrier-frequency configurations.
 
-The project explores the identification of an RF system from measured or simulated responses acquired under different excitation signals and frequency configurations. The implementation focuses on MATLAB-based preprocessing, neural-network modeling and validation.
+This portfolio version keeps the MATLAB source files and excludes raw measurement datasets to keep the repository lightweight.
 
 ---
 
 ## Project overview
 
-The original experimental structure contains signal datasets organized by excitation type and carrier-frequency configuration. The repository version focuses on the reusable MATLAB code and excludes raw measurement folders to keep the project lightweight and reproducible.
+The original project is organized around RF measurements collected under different input excitations and frequency configurations.
 
-The investigated excitation classes include:
+The local experimental structure includes signal classes such as:
 
-- white noise;
-- null signal;
-- sweep signal;
-- sinusoidal inputs;
 - Handel audio signal;
-- multiple RF frequency configurations from 25 MHz to 95 MHz.
+- white noise;
+- null input signal;
+- sweep signal;
+- sinusoidal inputs at different baseband frequencies.
+
+Each signal class is organized across multiple RF configurations:
+
+```text
+25MHz, 35MHz, 45MHz, 55MHz, 65MHz, 75MHz, 85MHz, 95MHz
+```
+
+The goal is to analyze and model how the RF system responds to different input conditions.
 
 ---
 
 ## Engineering objective
 
-The objective is to approximate the behavior of an RF system from input-output observations.
-
-In system-identification terms, the goal is to learn a mapping:
+The system-identification task can be interpreted as learning or estimating the mapping:
 
 ```math
 \hat{y}(t) = f_\theta(x(t))
@@ -33,111 +38,52 @@ In system-identification terms, the goal is to learn a mapping:
 
 where:
 
-- `x(t)` is the input signal or feature vector;
-- `y(t)` is the measured system response;
-- `f_\theta` is a parametric model learned from data;
-- `\hat{y}(t)` is the model-predicted response.
+- `x(t)` is the excitation signal or extracted feature vector;
+- `y(t)` is the measured RF response;
+- `f_\theta` is the identified model;
+- `\hat{y}(t)` is the predicted system output.
 
-The project investigates artificial neural networks as nonlinear approximators for this mapping.
+The project explores MATLAB-based preprocessing, validation and neural-network/system-identification workflows.
 
 ---
 
-## Repository content
+## Repository structure
 
 ```text
 rf-system-identification-rs-monitor/
 ├── src/
 │   └── matlab/
-│       ├── ann-scratch/
-│       ├── neural-network/
-│       └── *.m
 ├── README.md
 └── .gitignore
 ```
 
 ---
 
-## MATLAB implementation
-
-The MATLAB code includes:
-
-| Component | Description |
-|---|---|
-| `src/matlab/ann-scratch/` | Educational neural-network implementation from scratch |
-| `src/matlab/neural-network/` | Object-oriented neural-network prototype |
-| `src/matlab/*.m` | Main experiments, validation scripts and data-processing utilities |
-
-The implementation contains code for:
-
-- ANN initialization;
-- activation functions and derivatives;
-- forward propagation;
-- weight and bias updates;
-- training routines;
-- validation scripts;
-- experimental merging and preprocessing.
-
----
-
 ## Dataset policy
 
-Raw measurement folders are intentionally excluded from the repository.
+Raw experimental datasets are not tracked in this repository.
 
-The original local dataset contains repeated measurements organized by signal type and frequency, for example:
-
-```text
-Signal class/
-├── 25MHz/
-├── 35MHz/
-├── 45MHz/
-├── 55MHz/
-├── 65MHz/
-├── 75MHz/
-├── 85MHz/
-└── 95MHz/
-```
-
-These datasets are not tracked because they can be large, hardware-specific and not necessary for understanding the code architecture.
-
----
-
-## Methodology
-
-The identification workflow is:
-
-1. acquire or load RF response data;
-2. preprocess and merge experiments;
-3. define the neural-network architecture;
-4. train the model on available input-output samples;
-5. validate the predicted response against measured response;
-6. analyze generalization on unseen configurations.
+They are excluded because measurement folders can be large, hardware-specific and not always suitable for public distribution. The repository focuses on MATLAB source code and project methodology.
 
 ---
 
 ## Technical focus
 
-This repository demonstrates:
+This project demonstrates:
 
-- MATLAB-based system identification;
-- neural-network implementation from scratch;
-- nonlinear function approximation;
-- RF signal-response modeling;
-- experiment organization across multiple frequency configurations;
-- validation-oriented engineering workflow.
+- MATLAB-based RF data organization;
+- signal-response analysis;
+- system-identification workflow;
+- neural-network modeling experiments;
+- validation across multiple signal classes and RF configurations.
 
 ---
 
 ## Requirements
 
 - MATLAB
-- Signal Processing Toolbox, depending on the specific scripts used
+- Signal Processing Toolbox, depending on the scripts used
 - Neural Network / Deep Learning functionality, depending on the experiment branch
-
----
-
-## Notes
-
-This portfolio version focuses on source code and project structure. Raw RF measurements and bibliography PDFs are excluded to keep the repository compact and avoid distributing external copyrighted material.
 
 ---
 
